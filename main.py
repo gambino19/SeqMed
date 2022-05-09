@@ -42,7 +42,6 @@ def train_generator_MLE(gen, gen_opt, epochs):
     Reference:
         https://github.com/suragnair/seqGAN
     """
-    
     for epoch in range(epochs):
         total_loss = 0
 
@@ -55,7 +54,7 @@ def train_generator_MLE(gen, gen_opt, epochs):
             total_loss += loss.data.item()
             
         print(f"Loss at Generator epoch {epoch+1}: {total_loss}")
-
+        
 def train_generator_PG(gen, gen_opt, disc, epochs, samples=100):
     """
     Policy gradient training for generator during adversarial training
@@ -140,8 +139,8 @@ def train_discriminator(disc, disc_opt, gen, epochs, samples=100):
 if __name__ == '__main__':
     
     # Model Train conditions
-    EPOCHS = 2 # In seq-med, convergence was claimed to be within 20 iterations
-    SAMPLES = 10
+    EPOCHS = 30 # In seq-med, convergence was claimed to be within 20 iterations
+    SAMPLES = 200
     
     # Loading pre-processed training data as done by GAMENet
     # See https://github.com/sjy1203/GAMENet/tree/master/data for pkl file
@@ -188,7 +187,7 @@ if __name__ == '__main__':
     print('Starting Adversarial Training...')
     print('---------------------------------')
     for epoch in range(10):
-        print('Adversarial Training Discriminator : ')
+        print('Adversarial Training Generator : ')
         print('--------------------------------------')
         train_generator_PG(gen, gen_optimizer, disc, epochs=EPOCHS, samples=SAMPLES)
 
