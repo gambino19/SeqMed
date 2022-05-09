@@ -22,6 +22,5 @@ As per professor consent, pre-processed MIMIC-III data is used from the data fou
 python main.py
 ```
 ### Results:
-Failed to successfully recreate study.
 ![Example 1](GenLoss.png)
 ![Example 1](DiscLoss.png)
