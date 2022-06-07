@@ -21,6 +21,3 @@ As per professor consent, pre-processed MIMIC-III data is used from the data fou
 ```console
 python main.py
 ```
-### Results:
-![Example 1](GenLoss.png)
-![Example 1](DiscLoss.png)
